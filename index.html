@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ============================================================
+     EDIT ME: page title (shows in browser tab and Google results)
+     ============================================================ -->
+<title>Everything Good About Jason Arday</title>
+<meta name="description" content="First-hand accounts from people who knew, learned from, or crossed paths with Jason Arday. Collected by his students.">
+
+<!-- How the link looks when shared on WhatsApp, Bluesky, etc. -->
+<meta property="og:title" content="Everything Good About Jason Arday">
+<meta property="og:description" content="First-hand accounts from people who knew him. Collected by his students.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Karla:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --board:#1E2B26;      /* deep slate-green, the chalkboard */
+  --chalk:#EDEFE8;      /* chalk white */
+  --paper:#F5F5F0;      /* page below the board */
+  --ink:#23282A;        /* body text */
+  --muted:#6E7671;      /* attributions, captions */
+  --rule:#D6DAD2;       /* hairlines */
+  --accent:#4F7183;     /* dusty blue, links only */
+  --measure:34rem;      /* reading width */
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Karla",system-ui,sans-serif;
+  font-size:1.0625rem;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+.wrap{max-width:var(--measure);margin:0 auto;padding:0 1.5rem}
+
+/* ---------- the board (hero) ---------- */
+.board{
+  background:var(--board);
+  color:var(--chalk);
+  padding:clamp(4rem,14vh,8rem) 0 clamp(3.5rem,10vh,6rem);
+}
+.board .wrap{max-width:44rem}
+.eyebrow{
+  font-size:.75rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:#9BA79F;
+  margin:0 0 2.5rem;
+}
+.quote{
+  font-family:"Instrument Serif",Georgia,serif;
+  font-weight:400;
+  font-size:clamp(2rem,6.5vw,3.4rem);
+  line-height:1.12;
+  letter-spacing:-.015em;
+  margin:0 0 1.5rem;
+  text-wrap:balance;
+}
+.quote em{font-style:italic}
+.quote-source{
+  font-size:.8125rem;
+  color:#9BA79F;
+  margin:0;
+  line-height:1.5;
+}
+
+/* ---------- intro ---------- */
+.intro{padding:clamp(3rem,8vh,5rem) 0 1rem}
+.intro h1{
+  font-family:"Instrument Serif",Georgia,serif;
+  font-weight:400;
+  font-size:1.75rem;
+  line-height:1.2;
+  margin:0 0 1.25rem;
+}
+.intro p{margin:0 0 1.1rem}
+.scope{
+  border-left:2px solid var(--rule);
+  padding-left:1.25rem;
+  color:var(--muted);
+  font-size:.9375rem;
+}
+
+/* ---------- the wall of testimonies ---------- */
+.wall{padding:clamp(2.5rem,7vh,4rem) 0}
+.wall-head{
+  font-size:.75rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--muted);
+  border-bottom:1px solid var(--rule);
+  padding-bottom:.75rem;
+  margin:0 0 2.5rem;
+}
+.entry{
+  padding:0 0 2.25rem;
+  margin:0 0 2.25rem;
+  border-bottom:1px solid var(--rule);
+}
+.entry:last-child{border-bottom:0}
+.entry p{margin:0 0 .9rem}
+.entry p:last-of-type{margin-bottom:1rem}
+.by{
+  font-size:.8125rem;
+  color:var(--muted);
+  letter-spacing:.02em;
+  margin:0;
+}
+.by strong{font-weight:600;color:var(--ink)}
+
+/* On wide screens the attribution hangs out in the margin,
+   like a note written beside the text. */
+@media (min-width:64rem){
+  .entry{position:relative}
+  .by{
+    position:absolute;
+    left:-13rem;
+    top:.35rem;
+    width:11rem;
+    text-align:right;
+  }
+}
+
+/* ---------- share yours ---------- */
+.share{
+  background:var(--board);
+  color:var(--chalk);
+  padding:clamp(3.5rem,10vh,5.5rem) 0;
+}
+.share h2{
+  font-family:"Instrument Serif",Georgia,serif;
+  font-weight:400;
+  font-size:clamp(1.75rem,5vw,2.5rem);
+  line-height:1.15;
+  margin:0 0 1rem;
+}
+.share p{color:#B9C2BB;margin:0 0 1.75rem;font-size:.9375rem}
+.button{
+  display:inline-block;
+  background:var(--chalk);
+  color:var(--board);
+  text-decoration:none;
+  font-weight:600;
+  font-size:.9375rem;
+  letter-spacing:.01em;
+  padding:.85rem 1.6rem;
+  border-radius:2px;
+  transition:transform .15s ease,background .15s ease;
+}
+.button:hover{background:#fff;transform:translateY(-1px)}
+
+/* ---------- footer ---------- */
+footer{padding:3rem 0 4rem;font-size:.8125rem;color:var(--muted)}
+footer p{margin:0 0 .6rem}
+
+/* ---------- load-in ---------- */
+.fade{opacity:0;transform:translateY(12px);animation:in .7s cubic-bezier(.2,.7,.3,1) forwards}
+.fade:nth-child(2){animation-delay:.08s}
+.fade:nth-child(3){animation-delay:.16s}
+@keyframes in{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  .fade{animation:none;opacity:1;transform:none}
+  *{transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     THE BOARD — his own words. Swap this for a different line
+     if you and the others would rather lead with something else.
+     ============================================================ -->
+<header class="board">
+  <div class="wrap">
+    <p class="eyebrow fade">Everything good about Jason Arday</p>
+    <p class="quote fade">“If we want to make education more inclusive, the best tools we have are <em>solidarity, understanding and love</em>.”</p>
+    <p class="quote-source fade">Jason Arday, 2023</p>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============================================================
+       INTRO — edit freely. The last paragraph is the scope line;
+       keep something like it, it's what lets you bin bad-faith
+       submissions without owing anyone an explanation.
+       ============================================================ -->
+  <section class="intro">
+    <div class="wrap">
+      <h1>This site was made by some of his students.</h1>
+      <p>We're collecting first-hand accounts from people who knew him, learned from him, or crossed paths with him. Supervisions and seminars, emails answered at odd hours, a reading list, a word of advice that stuck. Small things count. Small things are usually the whole point.</p>
+      <p class="scope">This isn't a place to debate the events of recent months, and we won't publish anything that does. Every account here is read by one of us before it appears.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       THE WALL
+       To publish a testimony: copy one <article class="entry">…</article>
+       block, paste it directly below this comment, and replace the text.
+       Newest at the top. Delete the two examples before you go live.
+       ============================================================ -->
+  <section class="wall">
+    <div class="wrap">
+      <p class="wall-head">Accounts</p>
+
+      <article class="entry">
+        <p>[Replace this paragraph with the testimony. Keep each paragraph inside its own &lt;p&gt; tag — that's what gives you the spacing between them.]</p>
+        <p>[A second paragraph, if there is one.]</p>
+        <p class="by"><strong>Name as they asked to be shown</strong><br>MA student, 2024</p>
+      </article>
+
+      <article class="entry">
+        <p>[Second example. Delete both of these once you have real ones.]</p>
+        <p class="by"><strong>Anonymous</strong><br>Colleague, Glasgow</p>
+      </article>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     SHARE YOURS
+     Paste your Tally form link into the href below, replacing
+     the # — the whole thing, e.g. https://tally.so/r/abc123
+     ============================================================ -->
+<section class="share">
+  <div class="wrap">
+    <h2>Add yours</h2>
+    <p>A few sentences is plenty. We'll ask how you'd like your name to appear, and you can stay anonymous. Nothing goes up without you saying it can.</p>
+    <a class="button" href="#">Share your account</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <!-- EDIT ME: put a real address here before you launch -->
+    <p>Made by students of Jason Arday. Questions, corrections, or a request to remove something: <a href="mailto:you@example.com">you@example.com</a></p>
+    <p>Accounts are published with permission. We don't share anyone's contact details.</p>
+  </div>
+</footer>
+
+</body>
+</html>
