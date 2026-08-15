@@ -241,14 +241,21 @@ footer p{margin:0 0 .6rem}
 <section class="share">
   <div class="wrap">
     <h2>Add yours</h2>
-    <p>A few sentences is plenty. We'll ask how you'd like your name to appear, and you can stay anonymous. Nothing goes up without you saying it can.</p>
-    <a class="button" href="#">Share your account</a>
+    <p>A few sentences is plenty. You choose how you're named, and nothing goes up without your say-so.</p>
+    <div class="form-panel">
+      <iframe data-tally-src="https://tally.so/embed/Y5BB7B?alignLeft=1&amp;hideTitle=1&amp;dynamicHeight=1"
+              loading="lazy" width="100%" height="500" frameborder="0"
+              title="Share something good about Jason Arday"></iframe>
+    </div>
+    <p style="margin-top:1rem"><a href="https://tally.so/r/Y5BB7B" target="_blank" rel="noopener" style="color:#B9C2BB">Or open the form in a new tab</a></p>
   </div>
 </section>
-
+<script>
+var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function(e){e.src=e.dataset.tallySrc})};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s)}
+</script>
 <footer>
   <div class="wrap">
-    <!-- EDIT ME: put a real address here before you launch -->
+    <!-- yl2036@cantab.ac.uk -->
     <p>Made by students of Jason Arday. Questions, corrections, or a request to remove something: <a href="mailto:you@example.com">you@example.com</a></p>
     <p>Accounts are published with permission. We don't share anyone's contact details.</p>
   </div>
